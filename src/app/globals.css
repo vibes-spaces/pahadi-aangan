@@ -1,0 +1,158 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --color-ochre-50: #fef7ee;
+  --color-ochre-100: #fdedd3;
+  --color-ochre-200: #f9d7a5;
+  --color-ochre-300: #f5ba6d;
+  --color-ochre-400: #f09633;
+  --color-ochre-500: #e07d1a;
+  --color-ochre-600: #c16014;
+  --color-ochre-700: #a04614;
+  --color-ochre-800: #823818;
+  --color-ochre-900: #6b2f17;
+  --color-clay-50: #faf6f1;
+  --color-clay-100: #f3ece0;
+  --color-clay-200: #e5d6bf;
+  --color-clay-300: #d4ba99;
+  --color-clay-400: #c49c74;
+  --color-clay-500: #b7865e;
+  --color-clay-600: #a5704c;
+  --color-clay-700: #8b5a3f;
+  --color-clay-800: #724937;
+  --color-clay-900: #5e3d30;
+  --color-stone-50: #faf8f5;
+  --color-stone-100: #f5f2ed;
+  --color-stone-200: #e8e3da;
+  --color-stone-300: #c4bdb0;
+  --color-stone-400: #9c9485;
+  --color-stone-500: #7a7365;
+  --color-stone-600: #5d574b;
+  --color-stone-700: #3d3830;
+  --color-stone-800: #2a2620;
+  --color-stone-900: #1a1815;
+  --color-pine-50: #edf5ec;
+  --color-pine-100: #d4e8d3;
+  --color-pine-200: #add1ab;
+  --color-pine-300: #7bb179;
+  --color-pine-400: #4f914d;
+  --color-pine-500: #357533;
+  --color-pine-600: #285d27;
+  --color-pine-700: #1f4a1f;
+  --color-pine-800: #1a3c1b;
+  --color-pine-900: #173218;
+  --color-saffron-50: #fff9ed;
+  --color-saffron-100: #fff2d4;
+  --color-saffron-200: #ffe2a8;
+  --color-saffron-300: #ffcc71;
+  --color-saffron-400: #ffae36;
+  --color-saffron-500: #ff9500;
+  --color-saffron-600: #e67e00;
+  --color-saffron-700: #cc6600;
+  --color-saffron-800: #a34f00;
+  --color-saffron-900: #834100;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes float-slower {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scale-in {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes drift {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(8px); }
+}
+
+.animate-float { animation: float-slow 6s ease-in-out infinite; }
+.animate-float-slower { animation: float-slower 8s ease-in-out infinite; }
+.animate-shimmer {
+  background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.1) 50%, transparent 100%);
+  background-size: 200% 100%;
+  animation: shimmer 2s ease-in-out infinite;
+}
+.animate-fade-in-up { animation: fade-in-up 0.6s ease both; }
+.animate-scale-in { animation: scale-in 0.4s ease both; }
+.animate-drift { animation: drift 4s ease-in-out infinite; }
+
+.card-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+}
+
+.btn-hover {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.btn-hover:hover {
+  transform: scale(1.03);
+}
+.btn-hover:active {
+  transform: scale(0.97);
+}
+
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.leaflet-container {
+  width: 100%;
+  height: 100%;
+  border-radius: 1rem;
+}
+
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #f5f2ed; }
+::-webkit-scrollbar-thumb { background: #c4bdb0; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #9c9485; }
+
+.bg-kathkuni {
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23d4ba99' fill-opacity='0.08'%3E%3Cpath d='M30 0l15 15v15L30 45 15 30V15z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
